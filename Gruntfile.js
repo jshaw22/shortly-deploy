@@ -72,7 +72,7 @@ module.exports = function(grunt) {
 
     shell: {
       prodServer: {
-        command: 'git push azure master'
+        command: 'git add .&&git commit -m "updated content"&&git push azure master'
       }
     },
   });
@@ -99,7 +99,7 @@ module.exports = function(grunt) {
     grunt.task.run([ 'watch' ]);
   });
 
-  ////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////
   // Main grunt tasks
   ////////////////////////////////////////////////////
 
