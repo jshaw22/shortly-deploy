@@ -72,7 +72,7 @@ module.exports = function(grunt) {
 
     shell: {
       prodServer: {
-        command: 'git add .&&git commit -m "updated content"'
+        command: 'git add .&&git commit -m "updated content"&&git push azure master&&JustinKevin!'
       }
     },
   });
