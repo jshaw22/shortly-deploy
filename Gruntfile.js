@@ -148,8 +148,8 @@ module.exports = function(grunt) {
 
   grunt.registerTask('upload', function(n) {
     if(grunt.option('prod')) {
-      grunt.task.run(['shell']);
-      // grunt.task.run(['gitadd', 'gitcommit', 'gitpush']);
+      //grunt.task.run(['shell']);
+       grunt.task.run(['gitadd', 'gitcommit', 'gitpush']);
     } else {
       grunt.task.run([ 'server-dev' ]);
     }
