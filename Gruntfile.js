@@ -82,7 +82,7 @@ module.exports = function(grunt) {
           force: true
         },
         files: {
-          src: ['Gruntfile.js']
+          src: ['Gruntfile.js', 'public/dist/*.js']
         }
       }
     },
