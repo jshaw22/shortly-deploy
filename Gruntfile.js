@@ -72,9 +72,19 @@ module.exports = function(grunt) {
 
     shell: {
       prodServer: {
-        command: 'git add .&&git commit -m "updated content"&&git push azure master&&JustinKevin!'
+        command: 'git add .&&git commit -m "updated content"'
       }
     },
+
+    gitpush: {
+    your_target: {
+      options: {
+        remote: "azure",
+        branch: "master" 
+      }
+    }
+  },
+
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -85,6 +95,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-nodemon');
+  grunt.loadNpmTasks('grunt-git');
 
   grunt.registerTask('server-dev', function (target) {
     // Running nodejs in a different process and displaying output on the main console
