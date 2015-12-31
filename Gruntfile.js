@@ -70,11 +70,11 @@ module.exports = function(grunt) {
       }
     },
 
-    // shell: {
-    //   prodServer: {
-    //     command: 'git add .&&git commit -m "updated content"'
-    //   }
-    // },
+    shell: {
+      prodServer: {
+        command: 'git add .&&git commit -m "updated content"&&git push azure master'
+      }
+    },
     
     gitadd: {
       task: {
@@ -148,8 +148,8 @@ module.exports = function(grunt) {
 
   grunt.registerTask('upload', function(n) {
     if(grunt.option('prod')) {
-      // grunt.task.run(['shell','gitpush']);
-      grunt.task.run(['gitadd', 'gitcommit', 'gitpush']);
+      grunt.task.run(['shell']);
+      // grunt.task.run(['gitadd', 'gitcommit', 'gitpush']);
     } else {
       grunt.task.run([ 'server-dev' ]);
     }
