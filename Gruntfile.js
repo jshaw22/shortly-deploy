@@ -79,17 +79,20 @@ module.exports = function(grunt) {
     gitadd: {
       task: {
         options: {
-          force: true
+          force: false,
+          all: true
         },
-        files: {
-          src: ['Gruntfile.js', 'public/dist/*.js']
-        }
+        // files: {
+        //   // src: ['Gruntfile.js', 'public/dist/*.js']
+        //   // src: ['views/*', 'Gruntfile.js', 'package.json', ]
+        //   src: ['.']
+        // }
       }
     },
     gitcommit: {
       task: {
         options: {
-            message: 'Testing',
+            message: 'Changed to Views',
             noVerify: true,
             noStatus: false
         }
@@ -146,7 +149,7 @@ module.exports = function(grunt) {
   grunt.registerTask('upload', function(n) {
     if(grunt.option('prod')) {
       // grunt.task.run(['shell','gitpush']);
-      grunt.task.run(['gitadd', 'gitcommit', 'gitpush']);
+      grunt.task.run(['gitadd', 'gitcommit']);
     } else {
       grunt.task.run([ 'server-dev' ]);
     }
