@@ -92,7 +92,7 @@ module.exports = function(grunt) {
     gitcommit: {
       task: {
         options: {
-            message: 'Changed to Views',
+            message: 'Deploying',
             noVerify: true,
             noStatus: false
         }
